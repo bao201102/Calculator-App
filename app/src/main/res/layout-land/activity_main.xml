@@ -37,8 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/linecolor"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        android:layout_marginBottom="6dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -59,102 +58,56 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_clear"
-                android:textSize="15dp"
-                style="@style/operatorbutton"
+                style="@style/operatorbutton_land"
                 android:text="DEL" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_open"
-                style="@style/operatorbutton"
-                android:text="("/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_close"
-                style="@style/operatorbutton"
-                android:text=")" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_divide"
-                style="@style/operatorbutton"
-                android:text="/" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_7"
-                android:text="7" />
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_8"
-                android:text="8" />
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_9"
-                android:text="9" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_multiply"
-                style="@style/operatorbutton"
-                android:text="*" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_4"
-                android:text="4" />
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
+                style="@style/digitbutton_land"
                 android:id="@+id/btn_5"
                 android:text="5" />
 
             <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
+                style="@style/digitbutton_land"
                 android:id="@+id/btn_6"
                 android:text="6" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_subtract"
-                style="@style/operatorbutton"
-                android:text="-" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_7"
+                android:text="7" />
 
             <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_1"
-                android:text="1" />
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_8"
+                android:text="8" />
 
             <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_2"
-                android:text="2" />
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_9"
+                android:text="9" />
+
+
 
             <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
-                android:id="@+id/btn_3"
-                android:text="3" />
+                android:id="@+id/btn_multiply"
+                style="@style/operatorbutton_land"
+                android:text="*" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_add"
-                style="@style/operatorbutton"
-                android:text="+" />
+                android:id="@+id/btn_divide"
+                style="@style/operatorbutton_land"
+                android:text="/" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_open"
+                style="@style/operatorbutton_land"
+                android:text="(" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_close"
+                style="@style/operatorbutton_land"
+                android:text=")" />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -164,23 +117,54 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_allclear"
-                style="@style/operatorbutton"
+                style="@style/operatorbutton_land"
                 android:text="C" />
 
             <com.google.android.material.button.MaterialButton
-                style="@style/digitbutton"
+                style="@style/digitbutton_land"
                 android:id="@+id/btn_0"
                 android:text="0" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_1"
+                android:text="1" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_2"
+                android:text="2" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_3"
+                android:text="3" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/digitbutton_land"
+                android:id="@+id/btn_4"
+                android:text="4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add"
+                style="@style/operatorbutton_land"
+                android:text="+" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_subtract"
+                style="@style/operatorbutton_land"
+                android:text="-" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_dot"
-                style="@style/digitbutton"
+                style="@style/digitbutton_land"
                 android:text="." />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_equal"
-                style="@style/operatorbutton"
-                android:text="="/>
+                style="@style/operatorbutton_land"
+                android:text="=" />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
