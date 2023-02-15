@@ -21,10 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     MaterialButton btn_clear,btn_open,btn_close,btn_allclear,btn_dot;
     MaterialButton btn_add,btn_subtract,btn_multiply,btn_divide,btn_equal;
     MaterialButton btn_0,btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8,btn_9;
-    List<String> resultList = new ArrayList<String>();
-    List<String> solutiontList = new ArrayList<String>();
-
-    String[] resultArray, solutionArray;
+    ArrayList<String> resultList = new ArrayList<String>();
+    ArrayList<String> solutionList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,32 +58,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), HistoryActivity.class);
-                i.putExtra("result", resultArray);
-                i.putExtra("solution", solutionArray);
+                if (resultList != null || solutionList != null) {
+                    i.putExtra("result", resultList);
+                    i.putExtra("solution", solutionList);
+                }
                 startActivity(i);
             }
         });
     }
 
-
-
-
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        if (result.getText().toString()!=null)
+        if (result.getText().toString() != null)
             outState.putString("result", result.getText().toString());
-        if (solution.getText().toString()!=null)
+        if (solution.getText().toString() != null)
             outState.putString("solution", solution.getText().toString());
+
+        if (resultList != null)
+            outState.putStringArrayList("resultList", resultList);
+        if (solutionList != null)
+            outState.putStringArrayList("solutionList", solutionList);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState.get("result")!=null)
+        if (savedInstanceState.get("result") != null)
             result.setText(savedInstanceState.get("result").toString());
-        if (savedInstanceState.get("solution")!=null)
+        if (savedInstanceState.get("solution") != null)
             solution.setText(savedInstanceState.get("solution").toString());
+
+        if (savedInstanceState.getStringArrayList("resultList") != null)
+            resultList = savedInstanceState.getStringArrayList("resultList");
+        if (savedInstanceState.getStringArrayList("solutionList") != null)
+            solutionList = savedInstanceState.getStringArrayList("solutionList");
     }
 
     void assignId(MaterialButton btn, int id){
@@ -109,10 +116,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             double val = eval(dataCalculate);
             result.setText(String.valueOf(val));
             resultList.add(String.valueOf(val));
-            solutiontList.add(solution.getText().toString());
+            solutionList.add(solution.getText().toString());
 
-            resultArray = resultList.toArray(new String[0]);
-            solutionArray = solutiontList.toArray(new String[0]);
             return;
         }
 

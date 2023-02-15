@@ -22,18 +22,15 @@ public class HistoryActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null){
-            String[] result = extras.getStringArray("result");
-            String[] solution = extras.getStringArray("solution");
+            ArrayList<String> result = extras.getStringArrayList("result");
+            ArrayList<String> solution = extras.getStringArrayList("solution");
 
             String his = "";
-            for (int i = result.length - 1; i >= 0; i--) {
-                his = his + solution[i] + " = " + result[i] + "\n\n";
+            for (int i = result.size() - 1; i >= 0; i--) {
+                his = his + solution.get(i) + " = " + result.get(i) + "\n\n";
             }
 
             history.setText(his);
-        }
-        else {
-            history.setText("Chưa có lịch sử");
         }
     }
 
