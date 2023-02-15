@@ -26,7 +26,7 @@ public class HistoryActivity extends AppCompatActivity {
             String[] solution = extras.getStringArray("solution");
 
             String his = "";
-            for (int i = 0; i < result.length; i++) {
+            for (int i = result.length - 1; i >= 0; i--) {
                 his = his + solution[i] + " = " + result[i] + "\n\n";
             }
 
